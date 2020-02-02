@@ -2,6 +2,8 @@
 build
 dist
 lib/nimbase.h
+*.so
+**/__pycache__/
 *.exe
 *.swp
 *.out
