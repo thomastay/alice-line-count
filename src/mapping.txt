@@ -1,0 +1,22 @@
+[C_Files]
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_assertions.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_system.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_posix.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_strutils.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_times.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_os.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_memfiles.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/stdlib_dynlib.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/@m..@s..@s..@s.nimble@spkgs@snimpy-0.1.0@snimpy@spy_types.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/@m..@s..@s..@s.nimble@spkgs@snimpy-0.1.0@snimpy@spy_lib.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/@m..@s..@s..@s.nimble@spkgs@snimpy-0.1.0@snimpy@spy_utils.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/@m..@s..@s..@s.nimble@spkgs@snimpy-0.1.0@snimpy.nim.c"
+--file:r"/home/thomas/.cache/nim/aliceLC_r/@maliceLC.nim.c"
+
+[C_Compiler]
+Flags="-w -O3 -fno-strict-aliasing -fno-ident"
+[Linker]
+Flags=" -lm   -ldl"
+[Environment]
+libpath="/home/thomas/.choosenim/toolchains/nim-#devel/lib"
+[Symbols]

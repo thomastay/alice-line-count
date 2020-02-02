@@ -1,27 +1,29 @@
-pypy: aliceLC.exe
+pypy: clean aliceLC.exe
 	python3 setup.py bdist_wheel
 
 aliceLC.exe: src/aliceLC.nim
-	nim c -d:release -d:danger --app:lib -o:alicelc/aliceLC.so src/aliceLC.nim
 	nim c -d:release -o:aliceLC.exe src/aliceLC.nim
 
-c_files: clean
-	nim c -d:release --compileOnly --app:lib --nimcache:c_files/ src/aliceLC.nim
+alicelc/aliceLC.so: src/aliceLC.nim
+	nim c -d:release -d:danger --app:lib -o:alicelc/aliceLC.so src/aliceLC.nim
 
-allsource:
-	niminst csource src/aliceLC.ini --d:release
+sources: clean
+	niminst csource src/aliceLC.ini --d:release --app:lib
 
-allzipsources:
-	rm -r build/
-	niminst csource src/aliceLC.ini --d:release
+zipsources: sources
 	tar -czvf sources.tar.gz build/
 
+compare: alicelc/aliceLC.so
+	echo "### Testing Nim countline ###"
+	/usr/bin/time python3 nim_countlines.py bigfile
+	echo "### Testing Python countline ###"
+	/usr/bin/time python3 python_countlines.py bigfile
 
 clean:
-	rm -rf build/ dist/ *.egg-info/ c_files/
+	rm -rf build/ dist/ *.egg-info/ c_files/ *.tar.gz
 
 fullClean: clean
 	rm -rf alicelc/aliceLC.so aliceLC.exe
 
 .PHONY:
-	clean pypy fullClean c_files
+	clean pypy fullClean c_files sources zipsources
