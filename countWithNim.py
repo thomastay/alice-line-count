@@ -1,4 +1,4 @@
-import aliceLC
+import alicelc
 import sys
 
-print(aliceLC.countLines(sys.argv[1]))
+print(alicelc.countLines(sys.argv[1]))

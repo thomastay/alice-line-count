@@ -7,9 +7,7 @@ class BinDist(Distribution):
     def has_ext_modules(foo):
         return True
 
-
 setup(
-    name="alicelc",
     packages=["alicelc"],
     package_data={
         "alicelc": ["aliceLC.so"],

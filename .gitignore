@@ -1,9 +1,12 @@
 *.egg-info
 build
 dist
+lib/nimbase.h
 *.exe
 *.swp
 *.out
 bigfile
 */**/*.pyc
 */**/.so
+*.gz
+
