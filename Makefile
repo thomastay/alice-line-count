@@ -1,4 +1,4 @@
-pypy: clean aliceLC.exe
+pypy: clean alicelc/aliceLC.so
 	python3 setup.py bdist_wheel
 
 aliceLC.exe: src/aliceLC.nim
@@ -20,10 +20,10 @@ compare: alicelc/aliceLC.so
 	/usr/bin/time python3 python_countlines.py bigfile
 
 clean:
-	rm -rf build/ dist/ *.egg-info/ c_files/ *.tar.gz
+	rm -rf build/ dist/ *.egg-info/ *.tar.gz
 
 fullClean: clean
 	rm -rf alicelc/aliceLC.so aliceLC.exe
 
 .PHONY:
-	clean pypy fullClean c_files sources zipsources
+	clean pypy fullClean sources zipsources
